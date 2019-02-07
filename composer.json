@@ -1,0 +1,15 @@
+{
+    "name": "michaelnichols/218_testing",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^8.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mike",
+            "email": "mike.nichols97@gmail.com"
+        }
+    ],
+    "require": {}
+}
