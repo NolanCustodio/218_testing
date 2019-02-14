@@ -8,6 +8,3 @@
 
 declare(strict_types=1);
 
-$name = "John Doe";
-$number = 200;
-$bool = TRUE;
