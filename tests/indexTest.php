@@ -27,7 +27,7 @@ final class indexTest extends TestCase
         $this->assertIsInt(5);
     }
 
-    public function testFloat: void
+    public function testFloat(): void
     {
         $this->assertIsFloat(0.2);
     }
