@@ -21,4 +21,14 @@ final class indexTest extends TestCase
     public function testBool(): void {
         $this->assertIsBool(true);
     }
+
+    public function testInt(): void
+    {
+        $this->assertIsInt(5);
+    }
+
+    public function testFloat: void
+    {
+        $this->assertIsFloat(0.2);
+    }
 }
