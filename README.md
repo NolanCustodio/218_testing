@@ -51,3 +51,51 @@ Restricts the class or method so that it can only be accessed from that class
 ### Statics
 
 **Statics** are the verbs of programs. They don't have their own instances but instead have methods that can be applied to multiple classes
+
+###Unit Testing
+
+- The act of writing code that will test to see if a part of code is usable. 
+
+- There are many ways to name unit tests, for example unit tests usually test a small component of code while integration tests are used for features or large parts of code
+
+### Use
+
+- This tells the code to run under certain parameters and it may be used to tell the entire file to run in a certain way or for a function to call upon a class in a certain way
+
+>Ex: use PHPUnit\Framework\TestCase; tells the file to extend PHPunit and use test 
+
+### Function
+
+- A string of code that is able to do a certain task. 
+
+- In this case the programmer is able to state if the function is able to be seen, what the function is named, if it returns anything, and what the function actually does.
+
+### Class
+
+- An object that can be created by the programmer which is just a container for all the methods, functions, variables and more.
+  
+### New
+
+- This is how PHP declares if there is a new instance of an object.
+
+> For example: there may be a class called Ball, but if one would want to instantiate the class they would have to declare a new variable and state that it would be an instance of ball with the properties that the Ball class has
+
+### $variable
+
+- this is how a variable is declared in PHP
+
+### $this
+
+- used for when talking to or creating a new instance of a variable. This is not the same as making a variable.
+
+### method_exists()
+
+- checks if a method exists.
+
+
+
+
+
+
+
+
