@@ -38,12 +38,16 @@ When added to a class it means it cannot be extended
 
 ### Objects
 
+**Objects** are the nouns of programs. They hold properties, attributes and methods and each applies differently to every instance of the object you make
+
 ### public
+
+Allows the class or method to be accessible from anywhere
 
 ### private
 
+Restricts the class or method so that it can only be accessed from that class
+
 ### Statics
 
-### Unit Testing
-
-### Use
+**Statics** are the verbs of programs. They don't have their own instances but instead have methods that can be applied to multiple classes
