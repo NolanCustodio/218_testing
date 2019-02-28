@@ -1,8 +1,7 @@
 <?php
-
 declare(strict_types=1);
 
-use PHPUnit\FrameWork\TestCase;
+use PHPUnit\Framework\TestCase;
 
 final class FileTest extends TestCase
 {
@@ -23,10 +22,10 @@ final class FileTest extends TestCase
             method_exists(File::class, 'readCSVtoArray')
         );
     }
+    public function testReadCSVtoArray()
+    {
 
-    public function testReadCSVtoArray() {
-
-        $records = File::readCSVtoArray("data/data.csv",'Car');
+        $records = File::readCSVtoArray("data/data.csv", 'File');
         print_r($records);
 
     }

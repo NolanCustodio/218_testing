@@ -1,8 +1,15 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: kwilliams
+ * Date: 2/21/19
+ * Time: 11:36 AM
+ */
 
 class File
 {
-    public static function readCSVtoArray(String $filename, String $class):array
+
+    public static function readCSVtoArray(String $filename):array
     {
         $records = Array();
         $count = 0;
@@ -23,4 +30,6 @@ class File
 
         return $records;
     }
+
+
 }
