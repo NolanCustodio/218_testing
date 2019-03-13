@@ -15,19 +15,15 @@ final class FileTest extends TestCase
     public function testFileObject() {
         $this->assertInstanceOf(File::class, new File());
     }
-    /*
-    public function testReadCSVtoArrayExists() {
 
+    public function testReadCSVtoArrayExists() {
         $this->assertTrue(
             method_exists(File::class, 'readCSVtoArray')
         );
     }
-    public function testReadCSVtoArray()
-    {
-
-        $records = File::readCSVtoArray("data/data.csv", 'File');
-        print_r($records);
-
+    public function testCreateHTMLTableExists() {
+        $this->assertTrue(
+            method_exists(File::class, 'createHTMLTable')
+        );
     }
-    */
 }
