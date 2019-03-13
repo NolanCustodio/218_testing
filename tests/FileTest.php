@@ -15,7 +15,7 @@ final class FileTest extends TestCase
     public function testFileObject() {
         $this->assertInstanceOf(File::class, new File());
     }
-
+    /*
     public function testReadCSVtoArrayExists() {
 
         $this->assertTrue(
@@ -29,4 +29,5 @@ final class FileTest extends TestCase
         print_r($records);
 
     }
+    */
 }

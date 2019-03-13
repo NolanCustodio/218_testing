@@ -22,17 +22,9 @@
 <main role="main" class="container">
     <div>
         <table class="table table-striped table-bordered">
-            <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Age</th>
-                <th scope="col">Gender</th>
-            </tr>
-            </thead>
-            <tbody>
+            <?php
 
-            </tbody>
+            ?>
         </table>
     </div>
 
