@@ -5,8 +5,7 @@ class File
 {
     public static function readCSVtoArray(String $filename):array
     {
-        $records = array();
-        $titles = array();
+        $titles = $records = array();
         $count = 0;
 
         if (($handle = fopen($filename, "r")) !== FALSE) {
@@ -21,7 +20,6 @@ class File
             }
             fclose($handle);
         }
-
         return array($records, $titles);
     }
 
@@ -29,19 +27,16 @@ class File
     {
         $html = "
             <table class='table'>
-              <thead>";
-
-        $html .= "<tr>";
-
-        $html .= ("<th>#</th>");
+              <thead>
+                <tr>
+                    <th>#</th>";
         foreach($titles as $title)
         {
             $html .= ("<th>" . ucwords($title) . "</th>");
         }
 
-        $html .= "</tr>";
-        $html .= "
-              </thead>
+        $html .= "</tr>
+                </thead>
               <tbody>";
 
 
@@ -55,7 +50,6 @@ class File
             foreach($titles as $title){
                 $html .= ("<td>" . $obj[$title] . "</td>");
             }
-
 
             $html .= "</tr>";
             $count++;
