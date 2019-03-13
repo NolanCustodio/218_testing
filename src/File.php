@@ -1,28 +1,71 @@
 <?php
+require("Record.php");
 
 class File
 {
-
     public static function readCSVtoArray(String $filename):array
     {
-        $records = Array();
+        $records = array();
+        $titles = array();
         $count = 0;
-        $fieldNames = '';
 
         if (($handle = fopen($filename, "r")) !== FALSE) {
             while (($row = fgetcsv($handle, 1000, ",")) !== FALSE) {
 
                 if($count == 0) {
-                    $fieldNames = $row;
+                    $titles = $row;
                 } else {
-                    $records[] = (object) array_combine($fieldNames, $row);
+                    array_push($records, new Record($row, $titles));
                 }
                 $count++;
             }
             fclose($handle);
         }
 
-        return $records;
+        return array($records, $titles);
+    }
+
+    public static function createHTMLTable($records, $titles): String
+    {
+        $html = "
+            <table class='table'>
+              <thead>";
+
+        $html .= "<tr>";
+
+        $html .= ("<th>#</th>");
+        foreach($titles as $title)
+        {
+            $html .= ("<th>" . ucwords($title) . "</th>");
+        }
+
+        $html .= "</tr>";
+        $html .= "
+              </thead>
+              <tbody>";
+
+
+        $count = 1;
+        foreach($records as $record)
+        {
+            $html .= "<tr>";
+
+            $obj = ($record->getUserData());
+            $html .= ("<td>" . $count . "</td>");
+            foreach($titles as $title){
+                $html .= ("<td>" . $obj[$title] . "</td>");
+            }
+
+
+            $html .= "</tr>";
+            $count++;
+        }
+
+        $html .= "
+              </tbody>
+            </table>";
+
+        return $html;
     }
 
 

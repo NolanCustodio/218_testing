@@ -19,4 +19,9 @@ class Record
             $i++;
         }
     }
+
+    function getData(): array
+    {
+        return $this->data;
+    }
 }
