@@ -50,7 +50,7 @@ class File
         {
             $html .= "<tr>";
 
-            $obj = ($record->getUserData());
+            $obj = ($record->getData());
             $html .= ("<td>" . $count . "</td>");
             foreach($titles as $title){
                 $html .= ("<td>" . $obj[$title] . "</td>");

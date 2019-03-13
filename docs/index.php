@@ -33,6 +33,10 @@
                 <table class="table table-striped table-bordered">
                     <?php
                         require("../src/File.php");
+                        $file = new File();
+
+                        $data = ($file::readCSVtoArray("../data/data.csv"));
+                        echo($file::createHTMLTable($data[0], $data[1]));
                     ?>
                 </table>
             </div>
