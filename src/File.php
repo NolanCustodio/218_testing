@@ -26,8 +26,8 @@ class File
     public static function createHTMLTable($records, $titles): String
     {
         $html = "
-            <table class='table'>
-              <thead>
+            <table class='table table-striped'>
+              <thead class='thead-dark'>
                 <tr>
                     <th>#</th>";
         foreach($titles as $title)
@@ -43,7 +43,11 @@ class File
         $count = 1;
         foreach($records as $record)
         {
-            $html .= "<tr>";
+            /*if ($count % 2 != 0){
+                $html .= "<tr style='background:gray;color:white;'>";
+            } else {
+                $html .= "<tr style='background:white;color:black;'>";
+            }*/
 
             $obj = ($record->getData());
             $html .= ("<td>" . $count . "</td>");
