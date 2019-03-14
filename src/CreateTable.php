@@ -1,31 +1,17 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: nolan
+ * Date: 3/14/2019
+ * Time: 12:11 AM
+ */
+
+require("File.php");
+require("RecordFactory.php");
 require("Record.php");
-
-class File
+class CreateTable
 {
-    public static function readCSVtoArray(String $filename):array
-    {
-        $titles = $records = array();
-        $count = 0;
-
-        if (($handle = fopen($filename, "r")) !== FALSE) {
-            while (($row = fgetcsv($handle, 1000, ",")) !== FALSE) {
-
-                if($count == 0) {
-                    $titles = $row;
-                } else {
-                    //$records[] = ($row, $titles);
-                    array_push($records, new Record($row, $titles));
-                }
-                $count++;
-            }
-            fclose($handle);
-        }
-        //return $records;
-        return array($records, $titles);
-    }
-
-    public static function createHTMLTable($records, $titles): String
+    public static function createHTMLTable($rows, $titles): String
     {
         $html = "
             <table class='table table-striped'>
@@ -43,15 +29,17 @@ class File
 
 
         $count = 1;
-        foreach($records as $record)
+        foreach($rows as $row)
         {
-            /*if ($count % 2 != 0){
+            /*
+            if ($count % 2 != 0){
                 $html .= "<tr style='background:gray;color:white;'>";
             } else {
                 $html .= "<tr style='background:white;color:black;'>";
-            }*/
+            }
+            */
 
-            $obj = ($record->getData());
+            $obj = ($row -> gerRecord());
             $html .= ("<td>" . $count . "</td>");
             foreach($titles as $title){
                 $html .= ("<td>" . $obj[$title] . "</td>");
@@ -61,12 +49,13 @@ class File
             $count++;
         }
 
+
+
         $html .= "
               </tbody>
             </table>";
 
         return $html;
     }
-
 
 }
