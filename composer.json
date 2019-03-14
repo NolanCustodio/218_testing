@@ -17,6 +17,6 @@
         }
     ],
     "require": {
-        "phpunit/phpunit": "^8.0"
+
     }
 }
