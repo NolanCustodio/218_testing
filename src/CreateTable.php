@@ -31,14 +31,6 @@ class CreateTable
         $count = 1;
         foreach($rows as $row)
         {
-            /*
-            if ($count % 2 != 0){
-                $html .= "<tr style='background:gray;color:white;'>";
-            } else {
-                $html .= "<tr style='background:white;color:black;'>";
-            }
-            */
-
             $obj = ($row -> gerRecord());
             $html .= ("<td>" . $count . "</td>");
             foreach($titles as $title){
