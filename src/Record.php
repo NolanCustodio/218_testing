@@ -20,8 +20,11 @@ class Record
         }
     }
 
+
+
     function getData(): array
     {
         return $this->data;
     }
+
 }

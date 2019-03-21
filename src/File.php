@@ -1,11 +1,13 @@
 <?php
-require("Record.php");
+
+require 'Record.php';
 
 class File
 {
     public static function readCSVtoArray(String $filename):array
     {
-        $titles = $records = array();
+        $titles = '';
+        $records = array();
         $count = 0;
 
         if (($handle = fopen($filename, "r")) !== FALSE) {
@@ -14,17 +16,17 @@ class File
                 if($count == 0) {
                     $titles = $row;
                 } else {
-                    //$records[] = ($row, $titles);
+                    //$record[] = ('$row, $titles');
                     array_push($records, new Record($row, $titles));
                 }
                 $count++;
             }
             fclose($handle);
         }
-        //return $records;
+        //return $record;
         return array($records, $titles);
     }
-
+/*
     public static function createHTMLTable($records, $titles): String
     {
         $html = "
@@ -49,7 +51,7 @@ class File
                 $html .= "<tr style='background:gray;color:white;'>";
             } else {
                 $html .= "<tr style='background:white;color:black;'>";
-            }*/
+            }
 
             $obj = ($record->getData());
             $html .= ("<td>" . $count . "</td>");
@@ -68,5 +70,5 @@ class File
         return $html;
     }
 
-
+*/
 }
